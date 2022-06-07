@@ -3,7 +3,7 @@ var uppercaseChar;
 var lowercaseChar;
 var num;
 var specialChar;
-
+// THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
 var createStructure = function(){
 
   var characters ="";
@@ -28,18 +28,35 @@ var createStructure = function(){
   }
 
   return characters;
-}
+};
+
 
 //THEN I choose a length of at least 8 characters and no more than 128 characters//
 var generatePassword = function() {
     var passwordLength = window.prompt("please choose the length of your password?");
 
-    while(passwordLength > 128 || passwordLength < 8 isNaN(passwordLength)) {
+    while(passwordLength > 128 || passwordLength < 8 || isNaN(passwordLength)) {
       window.alert("The length of the password has to be from 8 to 128.");
       passwordLength = window.prompt("How many characters do you want it to be?");
-       
+
     }
+    var characters = buildString();
+
+    while (characters === "") {
+        window.alert("YOU MUST CHOOSE AT LEAST ONE!");
+        characters = buildString();
+
+
+    for (var i = 0; i < passwordLength; i++) {
+      result += characters.charAT(Math.floor(math.random() * charactersLength));
+
+
+    }
+
+    return result;
 }
+}
+
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -53,3 +70,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
