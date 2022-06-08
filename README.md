@@ -7,4 +7,4 @@ self password generating website
 * CSS
 * Javascript
 ## Website
-
+https://bernabasa.github.io/password-generator/
