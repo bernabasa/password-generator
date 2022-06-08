@@ -4,9 +4,9 @@ var lowercaseChar;
 var num;
 var specialChar;
 // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-var createStructure = function(){
+var createStructure = function() {
 
-  var characters ="";
+  var characters = "";
 
   uppercaseChar = window.confirm("Are you sure you want to access uppercase characters?");
   if(uppercaseChar) {
@@ -24,11 +24,11 @@ var createStructure = function(){
   }
   specialChar = window.confirm("Are you sure you would like to use the special characters?");
   if(specialChar) {
-    characters += "#$&()!\"*+,-./:;<=>?@[\\]^_{|}~"
+    characters += "!\"#$%&()*+,-./:;<=>?@[\\]^_{|}~";
   }
 
   return characters;
-};
+}
 
 
 //THEN I choose a length of at least 8 characters and no more than 128 characters//
@@ -40,22 +40,23 @@ var generatePassword = function() {
       passwordLength = window.prompt("How many characters do you want it to be?");
 
     }
-    var characters = buildString();
+    var characters = createStructure();
 
     while (characters === "") {
         window.alert("YOU MUST CHOOSE AT LEAST ONE!");
-        characters = buildString();
-
-
-    for (var i = 0; i < passwordLength; i++) {
-      result += characters.charAT(Math.floor(math.random() * charactersLength));
-
-
+        characters = createStructure();
     }
+     
+    var result = "";
+    var charactersLength = characters.length;
+
+    for ( var i = 0; i < passwordLength; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
 
     return result;
 }
-}
+
 
 var generateBtn = document.querySelector("#generate");
 
